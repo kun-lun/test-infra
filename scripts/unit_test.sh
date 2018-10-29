@@ -6,8 +6,7 @@ pushd $DIR/..
     mkdir -p $GOPATH/src/github.com/xplaceholder
     mkdir $GOPATH/src/github.com/xplaceholder/${project_name}
     cp -r $WORKSPACE/* $GOPATH/src/github.com/xplaceholder/${project_name}/
-    ls $WORKSPACE
-    ls $GOPATH/src/github.com/xplaceholder/${project_name}
+    rm -rf ./src
     pushd $GOPATH/src/github.com/xplaceholder/${project_name}
         go get -u golang.org/x/lint/golint
         go get -u github.com/onsi/ginkgo/ginkgo
