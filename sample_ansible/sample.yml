@@ -5,7 +5,16 @@
     - vars/sample.yml
 
   roles:
-    - { role: 'kunlun.lamp_small' }
-    # - { role: 'kunlun.lamp_mid' }
-    # - { role: 'kunlun.lamp_large' }
-    # - { role: 'kunlun.lamp_maximum' }
+    - role: 'geerlingguy.composer'
+      become: true
+      become_user: root
+
+- hosts: sample_server2
+
+  vars_files:
+    - vars/sample.yml
+
+  roles:
+    - role: 'geerlingguy.php'
+      become: true
+      become_user: root
